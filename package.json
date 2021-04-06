@@ -1,0 +1,21 @@
+{
+  "name": "store-back-end",
+  "version": "1.0.0",
+  "description": "this is the store back end which runs with store front end",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zakaria harrane",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cors-anywhere": "^0.4.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

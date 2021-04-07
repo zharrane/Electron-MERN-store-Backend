@@ -7,6 +7,11 @@ const orderSchema = mongoose.Schema(
       required: false,
       ref: 'User',
     },
+    Seller: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User',
+    },
     oderItems: [
       {
         name: { type: String, required: true },
@@ -16,11 +21,6 @@ const orderSchema = mongoose.Schema(
           type: mongoose.Schema.Types.ObjectId,
           required: true,
           ref: 'Product',
-        },
-        Seller: {
-          type: mongoose.Schema.Types.ObjectId,
-          required: true,
-          ref: 'User',
         },
       },
     ],
@@ -66,6 +66,6 @@ const orderSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-const Product = mongoose.model('Product', productSchema);
+const Order = mongoose.model('Order', orderSchema);
 
-export default Product;
+export default Order;

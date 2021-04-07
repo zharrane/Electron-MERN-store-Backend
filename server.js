@@ -1,13 +1,13 @@
-const express = require('express');
+import express from 'express';
+import dotenv from 'dotenv';
+import products from './products.js';
+import cors from 'cors';
+import connectDB from './config/db.js';
+
 const app = express();
-const products = require('./products');
-const dotenv = require('dotenv');
-
 dotenv.config();
-var cors = require('cors');
-
 app.use(cors());
-
+connectDB();
 app.get('/', (req, res) => {
   res.send('hello from simple server :) Updated');
 });

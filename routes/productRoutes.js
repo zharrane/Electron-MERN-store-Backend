@@ -22,10 +22,10 @@ router.get(
   '/:id',
   expressAsyncHandler(async (req, res) => {
     const product = await Product.findById(req.params.id);
-    console.log('Product is :' + product);
     if (!product) {
-      console.log('ERROR');
-      res.status(404).json({ message: 'Product not found' });
+      console.log('ERROR finding product by id');
+      res.status(404);
+      throw new Error(`Product not found'`);
     }
     res.json(product);
   })
